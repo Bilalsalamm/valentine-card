@@ -1,0 +1,232 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffe4e1; 
+    font-family: 'Arial', sans-serif;
+    /* FIX 1: Prevent scrollbars from popping up and causing the shake */
+    overflow: hidden; 
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    z-index: 1; /* Keeps text above the floating hearts */
+}
+
+h1 {
+    color: #d02e2e;
+    font-size: 2.5rem;
+}
+
+.buttons {
+    margin-top: 20px;
+    /* FIX 2: Create a defined space for the buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 100px; 
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    /* Smooth out the movement so it doesn't look glitchy */
+    transition: all 0.2s ease; 
+}
+
+.yes-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.no-button {
+    background-color: #f44336;
+    color: white;
+    /* FIX 3: Ensure it starts in the normal flow, then JS takes over */
+    position: absolute; 
+}
+
+.gif_container img {
+    width: 250px;
+    margin-top: 30px;
+    border-radius: 15px;
+}
+
+/* --- Animations --- */
+
+.heart {
+    position: absolute;
+    bottom: -10px;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { 
+        transform: translateY(0) rotate(0deg); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: translateY(-110vh) rotate(360deg); 
+        opacity: 0; 
+    }
+}
+
+.confirm-btn {
+    background-color: #ff4d6d;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.video_container {
+    margin: 20px auto;
+    width: 100%;
+    /* Increased from 400px to 600px for a larger view */
+    max-width: 600px; 
+    aspect-ratio: 16 / 9; 
+}
+
+.kiss-video {
+    /* Changed from 300% to 100% to fit the container perfectly */
+    width: 100%; 
+    height: 100%;
+    border-radius: 20px;
+    border: 5px solid white; /* Slightly thicker border for the larger size */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Custom Slider Style */
+.volume-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modern-slider {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 5px;
+    background: #ffd1d8;
+    border-radius: 5px;
+    outline: none;
+}
+
+.modern-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ff4d6d;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+/* Sidebar Planner */
+.date-planner-sidebar {
+    flex: 1;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+/* The Pill Container */
+.music-card {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.7); /* Translucent white */
+    backdrop-filter: blur(10px); /* Glass effect */
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(255, 77, 109, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    z-index: 2000;
+}
+
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Modern Play/Pause Button */
+.modern-play-btn {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.modern-play-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Deep Black Background with a subtle radial glow */
+body {
+    background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+    color: #d4af37; /* Metallic Gold */
+    font-family: 'Playfair Display', serif; /* A more elegant font choice */
+}
+
+/* Updated Yes Button and confirm buttons */
+.yes-button, .confirm-btn, .modern-play-btn {
+    background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) !important;
+    color: #000 !important;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* The realistic "Yes" background we added earlier */
+.realistic-love-bg {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop');    background-attachment: fixed;
+}
+
+/* Modern Slider in Gold */
+.modern-slider {
+    accent-color: #d4af37;
+}
+
+.date-planner {
+    background: rgba(20, 20, 20, 0.8) !important;
+    border: 1px solid #d4af37 !important;
+    color: #fcf6ba;
+}
