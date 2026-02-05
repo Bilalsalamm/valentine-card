@@ -95,7 +95,26 @@ function handleYesClick() {
         </div>
     `;
 }
+function confirmDate() {
+    const activity = document.getElementById('activity').value;
+    const note = document.getElementById('love-note').value;
+    const shareText = `I said YES! ❤️\nActivity: ${activity}\nNote: ${note || "Can't wait!"}`;
 
+    // 1. Show the success message on the page
+    document.getElementById('confirmation-msg').innerText = `I'm so excited for our ${activity}!`;
+    
+    // 2. Copy the note to the clipboard automatically
+    navigator.clipboard.writeText(shareText).then(() => {
+        alert("Success! Your plan is copied. Now, paste it into the Instagram DM! ❤️");
+        
+        // 3. Redirect to Instagram immediately
+        window.open("https://www.instagram.com/direct/inbox/", "_blank");
+    }).catch(err => {
+        console.error('Could not copy text: ', err);
+        // Still redirect even if clipboard fails
+        window.open("https://www.instagram.com/direct/inbox/", "_blank");
+    });
+}
 
 function startConfetti() {
     for (let i = 0; i < 50; i++) {
