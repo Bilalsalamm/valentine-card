@@ -63,8 +63,8 @@ function handleYesClick() {
             <div class="video_container" style="flex: 2; max-width: 600px;">
                 <iframe 
                     class="kiss-video"
-                    src="https://www.youtube.com/embed/9ZX5OiUZytQ?si=4Van7Xd4F-TfI-iO" 
-                    frameborder="0" 
+                    src="https://www.youtube.com/embed/9ZX5OiUZytQ?autoplay=1&mute=1&controls=0&loop=1&playlist=9ZX5OiUZytQ"
+                     frameborder="0" 
                     allow="autoplay"
                     style="width: 100%; aspect-ratio: 16/9; border-radius: 15px; border: 5px solid white;">
                 </iframe>
@@ -183,4 +183,5 @@ function createHearts() {
     setTimeout(() => heart.remove(), 5000);
 } 
 setInterval(createHearts, 300);
+
 
